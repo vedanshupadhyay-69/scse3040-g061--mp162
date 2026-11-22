@@ -1,0 +1,32 @@
+data:
+  raw_train: "data/raw/train.csv"
+  raw_later: "data/raw/later.csv"
+  holdout_features: "data/raw/holdout_features.csv"
+  predictions_out: "predictions/holdout_predictions.csv"
+  findings_out: "reports/findings.yaml"
+
+features:
+  numeric:
+    - patients_ahead
+    - doctors_on_duty
+    - arrival_hour
+    - avg_consult_min
+    - lab_tests_pending
+    - distance_km
+  categorical:
+    - department
+    - wing
+  target: "wait_min"
+
+mlflow:
+  tracking_uri: "sqlite:///mlflow.db"
+  experiment_name: "mp162_opd_wait_time"
+  registered_model_name: "mp162_wait_time_model"
+
+model:
+  output_path: "models/model.joblib"
+  random_state: 42
+  val_size: 0.2
+  later_train_fraction: 0.7
+  promotion_min_improvement: 0.12
+  psi_bins: 10

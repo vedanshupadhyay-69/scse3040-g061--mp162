@@ -1,0 +1,56 @@
+group_id: "G061"
+problem_id: "MP162"
+
+data_issues:
+  leaking_column:
+    present: false
+    column: null
+  unit_mixup:
+    present: false
+    column: null
+    group_value: null
+    factor: null
+  sentinel_value:
+    present: true
+    column: "patients_ahead"
+    value: -1
+    count: 36
+  duplicate_rows:
+    present: true
+    count: 56
+  stuck_sensor:
+    present: false
+    column: null
+    start_date: null
+    end_date: null
+  target_typos:
+    present: true
+    count: 14
+  spelling_variants:
+    present: true
+    column: "department"
+    true_levels: 3
+
+tracking:
+  experiment_name: null
+  best_run_id: null
+  registered_model_name: null
+  champion_version: null
+
+monitoring:
+  psi:
+    patients_ahead: 0.0525
+    doctors_on_duty: 0.069
+    arrival_hour: 0.0409
+    avg_consult_min: 5.3534
+    lab_tests_pending: 0.0142
+    distance_km: 0.0419
+  most_drifted_feature: "avg_consult_min"
+  mae_by_group:
+    'Old Wing': null
+    'New Wing': null
+    'Annexe': null
+  worst_served_group: null
+  mae_v1_on_check: null
+  mae_v2_on_check: null
+  decision: null
